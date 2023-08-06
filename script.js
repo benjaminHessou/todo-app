@@ -1,6 +1,25 @@
 const inputBox = document.getElementById('input-box');
 const listContainer = document.getElementById('list-container');
 
+// Dark_Light theme
+const btnToggle = document.querySelector('.btn-toggle');
+
+btnToggle.addEventListener('click', () => {
+    const body = document.body;
+
+    if(body.classList.contains('dark')) {
+        body.classList.add('light');
+        body.classList.remove('dark');
+        btnToggle.src = "./images/icon-sun.svg";
+    } else if (body.classList.contains('light')) {
+        body.classList.add('dark');
+        body.classList.remove('light');
+        btnToggle.src = "./images/icon-moon.svg";
+    }
+})
+// Dark_Light theme Fin
+
+
 function addTask() {
     if(inputBox.value === "") {
         alert('Vous devez écrire quelque chose!');

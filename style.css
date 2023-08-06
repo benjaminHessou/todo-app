@@ -5,8 +5,24 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: #edf2fc;
+    --body-primary-color: #e9e9e9;
+    --secondary-color: #212121;
+}
+
+.dark {
+    --primary-color: #000106;
+    --body-primary-color: #171718;
+    --secondary-color: #FFF;
+    
+    .container {
+        background-image: url('/images/bg-desktop-dark.jpg');
+    }
+}
+
 body {
-    background-color: #e9e9e9;
+    background-color: var(--body-primary-color);
 }
 
 .container {
@@ -24,11 +40,28 @@ body {
     padding: 40px 30px 70px;
 }
 
+.title_theme {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title_theme img {
+    background-size: cover;
+    object-fit: cover;
+    padding-bottom: 25px;
+}
+
+#icon {
+    width: 22px;
+    cursor: pointer;
+}
+
 .to_do_app h2 {
-    color: #fff;
+    color: var(--primary-color);
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     letter-spacing: 10px;
     font-weight: bold;
 }
@@ -47,6 +80,8 @@ body {
     outline: none;
     padding: 14px;
     border-radius: 3px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color)
 }
 
 .row button {
@@ -60,12 +95,20 @@ body {
     margin-right: 2px;
     font-size: 25px;
     cursor: pointer;
+    color: var(--primary-color)
 }
 
 ul {
-    background-color: white;
+    background-color: var(--primary-color);
     width: 345px;
     border-radius: 3px;
+}
+
+.details {
+    background-color: var(--primary-color);
+    width: 345px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 
 .tasks p {
@@ -82,7 +125,28 @@ ul li {
     position: relative;
     user-select: none;
     cursor: pointer;
-    border-bottom: solid 1px rgb(232, 232, 232);
+    border-bottom: solid 1px rgb(195, 195, 195);
+    color: var(--secondary-color);
+}
+
+.details_li {
+    list-style: none;
+    font-size: 11px;
+    position: relative;
+    display: flex;
+    padding: 13px;
+    justify-content: space-between;
+    text-align: center;
+    gap: 10px;
+    color: var(--secondary-color);
+}
+
+.details_li p {
+    cursor: pointer;
+    transition: ease-in-out 0.1s;
+}
+.details_li p:hover {
+    font-weight: bold;
 }
 
 ul li::before {
@@ -135,7 +199,7 @@ ul li:hover span {
 }
 
 /* Dark and white mode */
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
     body{
         background-color: #e9e9e9;
         color: #333;
@@ -180,4 +244,4 @@ ul li:hover span {
     }
     
     
-}
+} */
